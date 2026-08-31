@@ -1,375 +1,341 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="">
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Giuliano Taliano — software independiente, Buenos Aires</title>
-<meta name="description" content="Desarrollador independiente en Buenos Aires. Hago Pill O-Clock: alarmas de medicación que suenan de verdad, con todos los datos en tu teléfono.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d4ed8'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='white' stroke-width='2.5'/%3E%3Cpath d='M16 10.5V16l4 2.5' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Estudio Taliano — software independiente, Buenos Aires</title>
+<meta name="description" content="Estudio independiente de software en Buenos Aires. Cuatro productos de consumo con una misma regla: lo tuyo queda de tu lado. Pill O-Clock, Revelum, Sharpkick y Saldá." />
+<meta name="theme-color" content="#f2f3ef" />
+<meta name="color-scheme" content="light" />
+
+<!-- Marca del estudio: cuatro piezas, una por producto. Inline para que el
+     sitio siga la regla de la casa: cero pedidos externos. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='12' height='12' rx='3.5' fill='%231a5cb0'/%3E%3Crect x='17' y='3' width='12' height='12' rx='3.5' fill='%237a4100'/%3E%3Crect x='3' y='17' width='12' height='12' rx='3.5' fill='%23175943'/%3E%3Crect x='17' y='17' width='12' height='12' rx='3.5' fill='%23532da8'/%3E%3C/svg%3E" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Estudio Taliano — software independiente, Buenos Aires" />
+<meta property="og:description" content="Cuatro productos de consumo con una misma regla: lo tuyo queda de tu lado. Tus datos, tu plata, tus recuerdos, tu criterio." />
+<meta property="og:locale" content="es_AR" />
+<!-- Apunta al dominio github.io a propósito: sigue resolviendo aunque después
+     se sume un dominio propio, así la tarjeta de compartir nunca queda vacía. -->
+<meta property="og:image" content="https://giulianotaliano.github.io/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"Organization",
+  "name":"Estudio Taliano",
+  "founder":{"@type":"Person","name":"Giuliano Taliano"},
+  "email":"giuliano.taliano1@gmail.com",
+  "address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},
+  "url":"https://giulianotaliano.github.io/" }
+</script>
+
 <style>
-  :root {
-    --paper: #f4f3ee;
-    --ink: #16150f;
-    --ink-soft: #5c5a4e;
-    --line: #16150f;
-    --line-soft: #c9c7bb;
-    --blue: #1d4ed8;
-    --alarm: #cf3f2a;
-    --paper-raised: #fbfaf7;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #14161c;
-      --ink: #e9e7dd;
-      --ink-soft: #9a988c;
-      --line: #e9e7dd;
-      --line-soft: #33363f;
-      --blue: #7d9bf0;
-      --alarm: #e56a56;
-      --paper-raised: #191c24;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #14161c; --ink: #e9e7dd; --ink-soft: #9a988c;
-    --line: #e9e7dd; --line-soft: #33363f;
-    --blue: #7d9bf0; --alarm: #e56a56; --paper-raised: #191c24;
-  }
-  :root[data-theme="light"] {
-    --paper: #f4f3ee; --ink: #16150f; --ink-soft: #5c5a4e;
-    --line: #16150f; --line-soft: #c9c7bb;
-    --blue: #1d4ed8; --alarm: #cf3f2a; --paper-raised: #fbfaf7;
-  }
+/* ════════════════════════════════════════════════════════════════════
+   Estudio Taliano — sitio del estudio
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+   La decisión que ordena todo: el estudio es el marco neutro y LOS
+   PRODUCTOS llevan el color. El chrome del estudio es tinta sobre
+   porcelana, sans pesada + mono para etiquetas; cada producto aparece
+   con su propio acento y su propia voz tipográfica — cuatro lomos en
+   un estante. Nada de crema+serif+terracota ni oscuro+ácido: la
+   personalidad sale de los productos reales, no de una plantilla.
 
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Archivo", system-ui, sans-serif;
-    font-variation-settings: "wdth" 100;
-    line-height: 1.55;
-    font-size: 16.5px;
-  }
+   Cero pedidos externos: sin fuentes web, sin analítica, sin imágenes
+   remotas. Es la misma regla que venden los productos.
+   ════════════════════════════════════════════════════════════════════ */
+:root{
+  --paper:#f2f3ef;        /* porcelana fría — deliberadamente NO crema */
+  --paper-2:#e9ebe4;
+  --card:#fbfcf9;
+  --ink:#191b1a;
+  --body:#3c423e;
+  --muted:#565d58;
+  --rule:#d8dcd4;
+  /* Acentos = los productos. Oscurecidos para AA como texto sobre porcelana. */
+  --pill:#1a5cb0;         /* Pill O-Clock — su azul profundo real */
+  --revelum:#7a4100;      /* Revelum — su marrón cálido, bajado para AA */
+  --sharp:#175943;        /* Sharpkick — verde pizarra de DT */
+  --salda:#532da8;        /* Saldá — violeta propio, sin pisar a Mercado Pago */
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Code",Consolas,"SF Mono",Menlo,monospace;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --maxw:1080px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+body{font-family:var(--sans);font-size:17px;line-height:1.65;color:var(--body);
+  background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{color:var(--ink);line-height:1.1;letter-spacing:-.02em}
+p{margin:0 0 1rem}
+a{color:var(--ink)}
+:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.4rem}
+.skip{position:absolute;left:-999px;background:var(--ink);color:var(--paper);padding:.7rem 1rem;z-index:100}
+.skip:focus{left:0}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
 
-  .sheet {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 0 24px 80px;
-  }
+/* ── Header ─────────────────────────────────────────────────────── */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;gap:1rem;padding:.8rem 0}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink)}
+.brand svg{flex:none}
+.brand b{font-weight:800;letter-spacing:.02em;font-size:.98rem;text-transform:uppercase}
+.nav-right{margin-left:auto;display:flex;gap:1.4rem;align-items:center}
+.nav-right a{color:var(--body);text-decoration:none;font-size:.9rem;font-weight:600}
+.nav-right a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:640px){.nav-right a[data-opt]{display:none}}
+.lang{border:1.5px solid var(--rule);background:transparent;color:var(--body);font:inherit;
+  font-size:.78rem;font-weight:700;letter-spacing:.06em;padding:.26rem .62rem;border-radius:3px;cursor:pointer}
+.lang:hover{border-color:var(--ink);color:var(--ink)}
 
-  a { color: var(--blue); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible {
-    outline: 2.5px solid var(--blue);
-    outline-offset: 3px;
-  }
+/* ── Hero ───────────────────────────────────────────────────────── */
+.hero{padding:clamp(3.5rem,9vw,7rem) 0 clamp(2.5rem,6vw,4.5rem)}
+.hero .mono{color:var(--muted);display:block;margin-bottom:1.4rem}
+h1{font-size:clamp(2.3rem,1.2rem + 4.6vw,4.2rem);font-weight:800;max-width:14ch}
+/* La línea firma: cuatro sustantivos, cuatro productos, cuatro acentos. */
+.claims{margin-top:1.2rem;font-size:clamp(1.25rem,1rem + 1.6vw,2rem);font-weight:750;
+  letter-spacing:-.015em;line-height:1.35;max-width:24ch}
+.claims .c1{color:var(--pill)}
+.claims .c2{color:var(--salda)}
+.claims .c3{color:var(--revelum)}
+.claims .c4{color:var(--sharp)}
+.lede{margin-top:1.5rem;font-size:1.06rem;max-width:37em;color:var(--body)}
 
-  .mono {
-    font-family: "Chivo Mono", ui-monospace, monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.02em;
-  }
+/* ── Estante de productos ───────────────────────────────────────── */
+section{padding:clamp(2.8rem,6vw,4.5rem) 0}
+.kicker{display:block;color:var(--muted);margin-bottom:1.6rem}
+.shelf{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:820px){.shelf{grid-template-columns:1fr 1fr}}
+.spine{position:relative;display:flex;flex-direction:column;gap:.55rem;background:var(--card);
+  border:1px solid var(--rule);border-left-width:6px;border-radius:6px;
+  padding:1.5rem 1.5rem 1.3rem;min-height:13.5rem}
+.spine[data-p="pill"]{border-left-color:var(--pill)}
+.spine[data-p="revelum"]{border-left-color:var(--revelum)}
+.spine[data-p="sharp"]{border-left-color:var(--sharp)}
+.spine[data-p="salda"]{border-left-color:var(--salda)}
+/* Cada nombre en su propia voz: cuatro lomos distintos en el mismo estante. */
+.spine h3{font-size:1.65rem;font-weight:700}
+.spine[data-p="pill"] h3{font-family:var(--serif);color:var(--pill)}
+.spine[data-p="revelum"] h3{font-family:Georgia,serif;font-style:italic;color:var(--revelum);font-weight:600}
+.spine[data-p="sharp"] h3{color:var(--sharp);text-transform:uppercase;letter-spacing:.05em;font-weight:800;font-size:1.45rem}
+.spine[data-p="salda"] h3{color:var(--salda);font-weight:800}
+.spine p{font-size:.96rem;margin:0;flex:1}
+.spine .meta{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.4rem}
+.tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;
+  padding:.24rem .55rem;border-radius:3px;border:1px solid var(--rule);color:var(--muted);background:var(--paper)}
+.tag.live{border-color:var(--sharp);color:var(--sharp)}
+.spine .go{margin-left:auto;font-size:.9rem;font-weight:700;text-decoration:none}
+.spine .go:hover{text-decoration:underline;text-underline-offset:4px}
+.spine[data-p="pill"] .go{color:var(--pill)}
+.spine[data-p="revelum"] .go{color:var(--revelum)}
+.spine[data-p="sharp"] .go{color:var(--sharp)}
+.quote{font-size:.85rem;color:var(--muted);font-style:italic}
 
-  /* ── Masthead ─────────────────────────────────── */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 22px 0 18px;
-    border-bottom: 2.5px solid var(--line);
-  }
-  .who { display: flex; flex-direction: column; gap: 2px; }
-  .who .name {
-    font-weight: 800;
-    font-size: 1.02rem;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-  }
-  .who .role { color: var(--ink-soft); font-size: 0.85rem; }
-  .lot { color: var(--ink-soft); text-align: right; line-height: 1.5; }
+/* ── La regla de la casa ────────────────────────────────────────── */
+.rules{background:var(--paper-2);border-block:1px solid var(--rule)}
+.rules-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+@media (min-width:820px){.rules-grid{grid-template-columns:repeat(3,1fr)}}
+.rule-item{border-top:3px solid var(--ink);padding-top:1rem}
+.rule-item h3{font-size:1.1rem;margin-bottom:.5rem;font-weight:750}
+.rule-item p{font-size:.93rem;color:var(--body);margin:0}
 
-  /* ── Portada del prospecto ────────────────────── */
-  .lead { padding: 52px 0 44px; border-bottom: 1px solid var(--line-soft); }
-  .lead h1 {
-    margin: 0 0 22px;
-    font-weight: 880;
-    font-variation-settings: "wdth" 72;
-    font-size: clamp(2.5rem, 7.5vw, 4.4rem);
-    line-height: 0.98;
-    letter-spacing: -0.015em;
-    text-transform: uppercase;
-    text-wrap: balance;
-    max-width: 16ch;
-  }
-  .lead h1 em {
-    font-style: normal;
-    color: var(--blue);
-  }
-  .lead p {
-    max-width: 52ch;
-    margin: 0;
-    font-size: 1.12rem;
-    color: var(--ink-soft);
-  }
-  .lead p strong { color: var(--ink); font-weight: 650; }
-
-  /* ── Secciones numeradas ──────────────────────── */
-  section { padding: 40px 0; border-bottom: 1px solid var(--line-soft); }
-  .sec-head {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 18px;
-  }
-  .sec-head .n {
-    font-family: "Chivo Mono", ui-monospace, monospace;
-    font-size: 0.8rem;
-    color: var(--paper);
-    background: var(--ink);
-    padding: 3px 8px 2px;
-    letter-spacing: 0.05em;
-  }
-  .sec-head h2 {
-    margin: 0;
-    font-size: 1.05rem;
-    font-weight: 750;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-  }
-  section > p { max-width: 60ch; margin: 12px 0; }
-
-  /* Producto */
-  .product {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    gap: 36px;
-    align-items: start;
-  }
-  @media (max-width: 680px) { .product { grid-template-columns: 1fr; } }
-
-  .product h3 {
-    margin: 0 0 4px;
-    font-size: 1.9rem;
-    font-weight: 850;
-    font-variation-settings: "wdth" 80;
-    letter-spacing: -0.01em;
-  }
-  .status {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin: 6px 0 16px;
-    font-family: "Chivo Mono", ui-monospace, monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-  }
-  .status::before {
-    content: "";
-    width: 8px; height: 8px;
-    background: var(--alarm);
-    border-radius: 50%;
-    animation: tick 2.4s steps(1) infinite;
-  }
-  @keyframes tick { 50% { opacity: 0.25; } }
-  @media (prefers-reduced-motion: reduce) { .status::before { animation: none; } }
-
-  /* Tabla “composición” */
-  .compo { border-top: 2px solid var(--line); }
-  .compo-row {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 14px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--line-soft);
-    font-size: 0.92rem;
-  }
-  .compo-row dt {
-    margin: 0;
-    font-family: "Chivo Mono", ui-monospace, monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-    padding-top: 3px;
-  }
-  .compo-row dd { margin: 0; }
-  @media (max-width: 480px) {
-    .compo-row { grid-template-columns: 1fr; gap: 2px; }
-  }
-
-  /* Principios */
-  .principles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1px;
-    background: var(--line-soft);
-    border: 1px solid var(--line-soft);
-  }
-  .principles article {
-    background: var(--paper-raised);
-    padding: 20px 20px 22px;
-  }
-  .principles h3 {
-    margin: 0 0 8px;
-    font-size: 0.95rem;
-    font-weight: 750;
-  }
-  .principles h3::before {
-    content: "→ ";
-    color: var(--blue);
-  }
-  .principles p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--ink-soft);
-  }
-
-  /* Contacto */
-  .contact-list { margin: 0; padding: 0; list-style: none; max-width: 560px; }
-  .contact-list li {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 4px 20px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .contact-list .k { color: var(--ink-soft); font-size: 0.9rem; }
-  .contact-list a, .contact-list .v { font-weight: 550; overflow-wrap: anywhere; }
-
-  footer {
-    padding-top: 26px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px 24px;
-    color: var(--ink-soft);
-  }
+/* ── Contacto / colofón ─────────────────────────────────────────── */
+.contact h2{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.2rem);font-weight:800;margin-bottom:.9rem}
+.contact p{max-width:38em}
+.contact .mail{font-size:1.12rem;font-weight:700;color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding:2.2rem 0 2.6rem;font-size:.88rem;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center}
+footer a{color:var(--body);text-decoration:none}
+footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.nocookie{font-family:var(--mono);font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;
+  border:1px solid var(--rule);border-radius:3px;padding:.24rem .55rem}
 </style>
 </head>
 <body>
-<div class="sheet">
+<a class="skip" href="#productos" data-i="skip">Saltar al contenido</a>
 
-  <header>
-    <div class="who">
-      <span class="name">Giuliano Taliano</span>
-      <span class="role">Desarrollador de software independiente</span>
+<header>
+  <nav class="wrap nav" aria-label="Principal">
+    <a class="brand" href="#top">
+      <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="3" y="3" width="12" height="12" rx="3.5" fill="#1a5cb0"/>
+        <rect x="17" y="3" width="12" height="12" rx="3.5" fill="#7a4100"/>
+        <rect x="3" y="17" width="12" height="12" rx="3.5" fill="#175943"/>
+        <rect x="17" y="17" width="12" height="12" rx="3.5" fill="#532da8"/>
+      </svg>
+      <b>Estudio Taliano</b>
+    </a>
+    <div class="nav-right">
+      <a href="#productos" data-i="n1">Productos</a>
+      <a href="#regla" data-opt data-i="n2">La regla</a>
+      <a href="#contacto" data-i="n3">Contacto</a>
+      <button class="lang" id="lang" type="button" aria-label="Switch to English">EN</button>
     </div>
-    <div class="lot mono">
-      Buenos Aires, Argentina<br>
-      EST. 2025 · IND. SOFTWARE
-    </div>
-  </header>
+  </nav>
+</header>
 
-  <div class="lead">
-    <h1>Software que se toma <em>los horarios</em> en serio.</h1>
-    <p>Hago aplicaciones donde fallar no es una opción de diseño: si una alarma
-    de medicación no suena, no es un bug — es <strong>un problema de salud</strong>.
-    Por eso construyo con una regla simple: primero que funcione siempre,
-    después todo lo demás.</p>
+<main id="top">
+
+<!-- ══ HERO ═══════════════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="wrap">
+    <span class="mono" data-i="eyebrow">Estudio independiente de software · Buenos Aires</span>
+    <h1 data-i="h1">Software que respeta lo tuyo.</h1>
+    <p class="claims" data-i-html="claims"><span class="c1">Tus datos.</span> <span class="c2">Tu plata.</span> <span class="c3">Tus recuerdos.</span> <span class="c4">Tu criterio.</span></p>
+    <p class="lede" data-i="lede">Cuatro productos de consumo con una misma regla: lo importante queda
+      de tu lado. Datos de salud que no salen de tu teléfono, plata que va directo de cuenta a cuenta,
+      recuerdos que son tuyos y análisis que muestran el trabajo en vez de vender promesas.</p>
   </div>
-
-  <section id="producto">
-    <div class="sec-head">
-      <span class="n">01</span>
-      <h2>Producto</h2>
-    </div>
-    <div class="product">
-      <div>
-        <h3>Pill O-Clock</h3>
-        <p class="status">EN PRUEBA CERRADA · GOOGLE PLAY · ANDROID</p>
-        <p>Recordatorios de medicación que suenan como un despertador de
-        verdad — pantalla completa, sobre el bloqueo, aunque el teléfono esté
-        en silencio — y vuelven a insistir si nadie los atiende.</p>
-        <p>Pensada para el que cuida además de para el que toma: una sola
-        persona puede manejar su propia medicación, la de su mamá y la de sus
-        hijos desde un teléfono, sin crear ni una cuenta.</p>
-      </div>
-      <dl class="compo">
-        <div class="compo-row">
-          <dt>ALARMAS</dt>
-          <dd>Pantalla completa con re-aviso automático; agrupa las tomas del mismo horario.</dd>
-        </div>
-        <div class="compo-row">
-          <dt>REGÍMENES</dt>
-          <dd>Ciclos, dosis descendentes, día por medio, inyectables semanales con rotación de sitio.</dd>
-        </div>
-        <div class="compo-row">
-          <dt>SEGURIDAD</dt>
-          <dd>Avisos de terapia duplicada y alergias con datos de la National Library of Medicine (EE. UU.).</dd>
-        </div>
-        <div class="compo-row">
-          <dt>PRIVACIDAD</dt>
-          <dd>Todo vive en el teléfono, cifrado. Sin cuentas, sin nube obligatoria.</dd>
-        </div>
-        <div class="compo-row">
-          <dt>IDIOMAS</dt>
-          <dd>Español, English, Português (Brasil).</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <section id="principios">
-    <div class="sec-head">
-      <span class="n">02</span>
-      <h2>Cómo trabajo</h2>
-    </div>
-    <div class="principles">
-      <article>
-        <h3>Local primero</h3>
-        <p>Los datos de salud se quedan en el dispositivo. La nube, cuando
-        exista, va a ser tuya y opcional — nunca un requisito.</p>
-      </article>
-      <article>
-        <h3>Sin datos inventados</h3>
-        <p>La información médica sale de fuentes con autoridad o no sale.
-        Preferimos una función menos antes que una respuesta dudosa.</p>
-      </article>
-      <article>
-        <h3>Para todas las edades</h3>
-        <p>Modo de letra grande, alarmas habladas y pantallas sin ruido:
-        la tecnología no debería excluir a quien más la necesita.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <div class="sec-head">
-      <span class="n">03</span>
-      <h2>Contacto</h2>
-    </div>
-    <ul class="contact-list">
-      <li>
-        <span class="k">Correo</span>
-        <a href="mailto:giuliano.taliano1@gmail.com">giuliano.taliano1@gmail.com</a>
-      </li>
-      <li>
-        <span class="k">Código</span>
-        <a href="https://github.com/GiulianoTaliano" rel="me">github.com/GiulianoTaliano</a>
-      </li>
-      <li>
-        <span class="k">Política de privacidad</span>
-        <a href="https://giulianotaliano.github.io/pill-o-clock/privacy-policy.html">Pill O-Clock — privacidad</a>
-      </li>
-      <li>
-        <span class="k">Base</span>
-        <span class="v">Ciudad Autónoma de Buenos Aires</span>
-      </li>
-    </ul>
-  </section>
-
-  <footer>
-    <span>© 2026 Giuliano Taliano</span>
-    <span class="mono">HECHO EN BUENOS AIRES · TIPOGRAFÍAS DE OMNIBUS-TYPE (BS. AS.)</span>
-  </footer>
-
 </div>
+
+<!-- ══ ESTANTE ════════════════════════════════════════════════════ -->
+<section id="productos">
+  <div class="wrap">
+    <span class="kicker mono" data-i="k1">Los productos</span>
+    <div class="shelf">
+
+      <article class="spine" data-p="pill">
+        <h3>Pill O-Clock</h3>
+        <p data-i="p1">La alarma de medicamentos que sí te despierta: suena en modo silencio, sobre la
+          pantalla bloqueada, con el vademécum argentino adentro. Tus datos de salud nunca salen del
+          teléfono — no hay cuenta, no hay nube.</p>
+        <div class="meta">
+          <span class="tag" data-i="p1s">Prueba cerrada · Android</span>
+          <a class="go" href="https://giulianotaliano.github.io/pill-o-clock/" data-i="go1">Conocer más →</a>
+        </div>
+      </article>
+
+      <article class="spine" data-p="revelum">
+        <h3>Revelum</h3>
+        <p data-i="p2">Fotolibros colaborativos para viajes y eventos: álbumes en polaroid, grilla o mapa,
+          y eventos en vivo donde los invitados suman fotos escaneando un QR. Tus recuerdos, bien
+          revelados.</p>
+        <div class="meta">
+          <span class="tag live" data-i="p2s">En producción · Web</span>
+          <a class="go" href="https://revelum.app" rel="noopener" data-i="go2">revelum.app →</a>
+        </div>
+      </article>
+
+      <article class="spine" data-p="sharp">
+        <h3>Sharpkick</h3>
+        <p data-i="p3">Análisis probabilístico de fútbol: el número del modelo al lado del precio de la
+          casa, y una combinada auditable por perfil de riesgo, con aciertos y errores publicados.
+          <span class="quote" data-i="p3q">«No vendemos pronósticos. Mostramos el trabajo.»</span></p>
+        <div class="meta">
+          <span class="tag live" data-i="p3s">En producción · Web · +18</span>
+          <a class="go" href="https://sharpkick.app" rel="noopener" data-i="go3">sharpkick.app →</a>
+        </div>
+      </article>
+
+      <article class="spine" data-p="salda">
+        <h3>Saldá</h3>
+        <p data-i="p4">Gastos de eventos entre amigos, saldados por alias, CVU o Mercado Pago. La app
+          nunca custodia fondos: la plata va directo de cuenta a cuenta, como tiene que ser.</p>
+        <div class="meta">
+          <span class="tag" data-i="p4s">En desarrollo · Android</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ LA REGLA ═══════════════════════════════════════════════════ -->
+<section id="regla" class="rules">
+  <div class="wrap">
+    <span class="kicker mono" data-i="k2">La regla de la casa</span>
+    <div class="rules-grid">
+      <div class="rule-item">
+        <h3 data-i="r1t">Lo tuyo, de tu lado</h3>
+        <p data-i="r1p">Datos locales antes que nube, fondos que no tocamos, exportación estándar en
+          todo. Si un día te querés ir, te vas con todo lo tuyo.</p>
+      </div>
+      <div class="rule-item">
+        <h3 data-i="r2t">Mostrar el trabajo</h3>
+        <p data-i="r2p">Estados honestos, límites dichos de frente y errores publicados junto a los
+          aciertos. Ninguna promesa que el producto no pueda cumplir.</p>
+      </div>
+      <div class="rule-item">
+        <h3 data-i="r3t">Largo plazo</h3>
+        <p data-i="r3p">Productos para mantener durante años: sin límites artificiales, sin funciones
+          rehenes de una suscripción, sin apuro por inflar nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ═══════════════════════════════════════════════════ -->
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <span class="kicker mono" data-i="k3">Contacto</span>
+    <h2 data-i="c1">¿Hablamos?</h2>
+    <p data-i="c2">Estudio Taliano es el estudio independiente de Giuliano Taliano, en Buenos Aires,
+      Argentina. Por productos, prensa o cualquier consulta:</p>
+    <p><a class="mail" href="mailto:giuliano.taliano1@gmail.com">giuliano.taliano1@gmail.com</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Estudio Taliano · Buenos Aires</span>
+    <a href="https://github.com/GiulianoTaliano" rel="noopener">GitHub</a>
+    <a href="https://giulianotaliano.github.io/pill-o-clock/privacy-policy.html" data-i="f1">Privacidad de Pill O-Clock</a>
+    <span class="nocookie" data-i="f2">Este sitio no usa cookies</span>
+  </div>
+</footer>
+
+<script>
+/* El sitio se entrega completo en castellano; el inglés se aplica encima.
+   Si este script nunca corre, la página igual está terminada. */
+var EN = {
+ skip:"Skip to content",
+ n1:"Products", n2:"The rule", n3:"Contact",
+ eyebrow:"Independent software studio · Buenos Aires",
+ h1:"Software that respects what's yours.",
+ claims:'<span class="c1">Your data.</span> <span class="c2">Your money.</span> <span class="c3">Your memories.</span> <span class="c4">Your judgment.</span>',
+ lede:"Four consumer products, one non-negotiable rule: what matters stays on your side. Health data that never leaves your phone, money that moves account to account, memories that remain yours, and analysis that shows its work instead of selling promises.",
+ k1:"The products", k2:"House rule", k3:"Contact",
+ p1:"The medication alarm that actually wakes you: it rings through silent mode, over the lock screen, with Argentina's national drug catalogue built in. Your health data never leaves the phone — no account, no cloud.",
+ p1s:"Closed beta · Android", go1:"Learn more →",
+ p2:"Collaborative photo books for trips and events: albums as scattered polaroids, grids or a map, and live events where guests add photos by scanning a QR. Your memories, beautifully revealed.",
+ p2s:"In production · Web", go2:"revelum.app →",
+ p3:"Probabilistic football analysis: the model's number next to the bookmaker's price, and one auditable parlay per risk profile, with hits and misses published alike.",
+ p3q:"“We don't sell picks. We show the work.”",
+ p3s:"In production · Web · 18+", go3:"sharpkick.app →",
+ p4:"Event expenses among friends, settled by bank alias, CVU or Mercado Pago. The app never holds funds: money moves straight from account to account, as it should.",
+ p4s:"In development · Android",
+ r1t:"Yours stays on your side",
+ r1p:"Local before cloud, funds we never touch, standard exports everywhere. If you ever want to leave, you leave with everything that's yours.",
+ r2t:"Show the work",
+ r2p:"Honest statuses, limits stated upfront, and misses published next to the hits. No promise the product can't keep.",
+ r3t:"Built for the long run",
+ r3p:"Products meant to be maintained for years: no artificial caps, no features held hostage by a subscription, no rush to inflate anything.",
+ c1:"Let's talk",
+ c2:"Estudio Taliano is the independent studio of Giuliano Taliano, in Buenos Aires, Argentina. For products, press or anything else:",
+ f1:"Pill O-Clock privacy", f2:"This site uses no cookies"
+};
+(function(){
+  var btn=document.getElementById("lang"), es={}, en=false;
+  var nodes=document.querySelectorAll("[data-i],[data-i-html]");
+  nodes.forEach(function(el){ es[el.getAttribute("data-i")||el.getAttribute("data-i-html")]=el.innerHTML; });
+  btn.addEventListener("click",function(){
+    en=!en; var d=en?EN:es;
+    nodes.forEach(function(el){ var k=el.getAttribute("data-i")||el.getAttribute("data-i-html");
+      if(d[k]!=null) el.innerHTML=d[k]; });
+    document.documentElement.lang=en?"en":"es";
+    btn.textContent=en?"ES":"EN";
+    btn.setAttribute("aria-label",en?"Cambiar a español":"Switch to English");
+  });
+})();
+</script>
 </body>
 </html>
