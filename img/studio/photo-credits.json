@@ -1,0 +1,41 @@
+[
+  {
+    "file": "img/studio/landscape-1015.webp",
+    "requestedUrl": "https://picsum.photos/id/1015/1600/1200",
+    "id": 1015,
+    "author": "Alexey Topolyanskiy",
+    "originalUrl": "https://unsplash.com/photos/-oWyJoSqBRM",
+    "licence": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "repoSource": "travel-book/scripts/seed-demo-account.mjs:151",
+    "bytes": 186908,
+    "source": "Lorem Picsum (Unsplash)",
+    "originalDownloadBytes": 337057
+  },
+  {
+    "file": "img/studio/landscape-1016.webp",
+    "requestedUrl": "https://picsum.photos/id/1016/1600/1200",
+    "id": 1016,
+    "author": "Philippe Wuyts",
+    "originalUrl": "https://unsplash.com/photos/_h7aBovKia4",
+    "licence": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "repoSource": "travel-book/scripts/seed-demo-account.mjs:151",
+    "bytes": 208270,
+    "source": "Lorem Picsum (Unsplash)",
+    "originalDownloadBytes": 351889
+  },
+  {
+    "file": "img/studio/landscape-1018.webp",
+    "requestedUrl": "https://picsum.photos/id/1018/1600/1200",
+    "id": 1018,
+    "author": "Andrew Ridley",
+    "originalUrl": "https://unsplash.com/photos/Kt5hRENuotI",
+    "licence": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "repoSource": "travel-book/scripts/seed-demo-account.mjs:151",
+    "bytes": 126018,
+    "source": "Lorem Picsum (Unsplash)",
+    "originalDownloadBytes": 239453
+  }
+]
