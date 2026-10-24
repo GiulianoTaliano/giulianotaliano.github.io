@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://estudiotaliano.com/pill-o-clock/sitemap.xml
